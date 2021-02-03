@@ -1,0 +1,17 @@
+section.astronomy {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  column-gap: 2em;
+}
+
+section.astronomy article {
+  border: 1px solid black;
+  border-radius: 0.3em;
+  padding: 0 1em 1em 1em;
+  text-align: center;
+}
+
+section.astronomy article img {
+  width: 20em;
+  object-fit: cover;
+}
