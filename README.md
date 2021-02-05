@@ -1,46 +1,36 @@
-# Web App From Scratch @cmda-minor-web 2020 - 2021
+# Web App From Scratch
+In this course we will learn how to create a single page web application without the use of frameworks or unnecessary libraries. So with vanilla HTML, CSS and JavaScript. Data is loaded from your own chosen external API and then displayed in the interface.  
 
-In this course you will learn to build a web application without frameworks or unnecessary libraries, but with vanilla HTML, CSS & JavaScript as much as possible. The end result is a modular, single page web app (SPA). Data will be retrieved from an external API of your choice, manipulated and finally shown in the UI of the App. You will learn different ways to structure code and develop your own coding style. With the gained knowledge you will be able to build interactive prototypes, based on real data. Also you will gain a better understanding of how API's, frameworks and libraries work.
+## Concept idea 
+For my concept, I want to use data from the NASA API. Below I have put down a sketch and a digital sketch as an idea of what data I want to show and how the interaction will work in general. Keep in mind that this is still purely a concept and my current version is nowhere near it.  
 
-## Learning goals
+<img width="50%" alt="schets van concept" src="https://user-images.githubusercontent.com/60745347/107011834-7e80eb00-6798-11eb-96db-6ced7cfd4d46.JPG" />
 
-* _You can add structure to your code by applying patterns. You can defend the choice for the chosen patterns_
-* _You can retrieve data, manipulate it and dynamically convert it to html elements using templating_
-* _You understand how you can work with an external API using asynchronous code_
-* _You understand how you can manage state in your application and you inform the user of state where necessary_
+![image](https://user-images.githubusercontent.com/60745347/107009754-bfc3cb80-6795-11eb-8a85-6db245c938f6.png)
 
-[Rubric](https://docs.google.com/spreadsheets/d/1vJJ4EhIqkefWj1nWFp0Pnvy1Kld-S2V3qwZgC6XQO0c/edit?usp=sharing), with learning goals
-[Overall plaaning](https://teams.microsoft.com/l/file/95EAEC95-4AB8-4E62-A810-2445969460B6?tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7&fileType=xlsx&objectUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt%2FShared%20Documents%2F02%20-%20Web%20App%20From%20Scratch%2FWAFS%202021%20Planning.xlsx&baseUrl=https%3A%2F%2Ficthva.sharepoint.com%2Fsites%2FFDMCI_EDU__CMD20_21_Minor_Web_5i7j73jt&serviceName=teams&threadId=19:9bd8abc7b32c4e0196ddbaae12cf8e79@thread.tacv2&groupId=5d001f9a-0a4b-4768-92b1-0f1768328ba3)
+## Data
+The data I plan to use for my concept comes from NASA. In doing so, I am using two APIs from NASA. The first API contains data from the "Astronomy Picture of the Day" website. The second API contains data from "Mars Rover Photos". Below I have posted an overview of the data contained in these APIs: 
 
-## Program
+**From the "Astronomy Picture of the Day" dataset:**
+- `copyright`: information about the person or organization that has a copyright on this image (if applicable), example output: `"Eddie Guscott"`
+- `date`: the date the picture was featured as Astronomy Picture of the Day (formatted as YYYY-MM-DD), example output: `"2004-05-11"`
+- `explanation`: an explanation about the picture, example output: `"M13 is one of the most prominent..."`
+- `hdurl`: link to the HD version of the image, example output:`"https://apod.nasa.gov/apod/image/0405/m13_guscott_big.jpg"`
+- `title`: title of the image., example output: `"M13: The Great Globular Cluster in Hercules"`
+- `url`: link to the image (lower quality version), example output:`"https://apod.nasa.gov/apod/image/0405/m13_guscott.jpg"`
 
-### Week 1 - Hello API 🐒
+**From the "latest Mars Rover Photos" dataset:**
+- `img_src`: link to the image taken by the Mars Rover, example output: `"https://mars.nasa.gov/msl-raw/FRB_665678231EDR_F341M_.JPG"`
+- `earth_date`: the date the picture was taken, based on earth dates (formatted as YYYY-MM-DD), example output: `"2004-05-11"`
+- `camera`: an object with information about which rover camera took the picture, example output: `{full_name: "Front Hazard Avoidance Camera", name: "FHAZ"}`
+- `rover`: an object with information about the rover that took the picture, example output:`{landing_date: "2012-08-06", launch_date: "2011-11-26", name: "Curiosity", status: "active"}`
 
-Goal: Retrieve data from an API and render it in an overview page.
+## How to install
+Comming soon
 
-[Excercises](https://github.com/cmda-minor-web/web-app-from-scratch-2021/blob/master/course/week-1.md)
+## License
+This repository is licensed as MIT • ©️ 2021 Lars Ruijs
 
-[Slides](https://docs.google.com/presentation/d/1hXfgIhBzJ2QXDmpKpMcx7G-a9R_fVrcPdeOyM3G0I00/edit?usp=sharing)
-
-### Week 2 - Design and Refactor 🛠
-
-Goal: Design the web app. Add routes and states. Split code into modules. Rendering detail page.
-
-[Excercises](https://github.com/cmda-minor-web/web-app-from-scratch-2021/blob/master/course/week-2.md)
-
-[Slides](https://docs.google.com/presentation/d/1ycANqFk9LtrZCBJF2TyQ1c_bejjEctSlb-52xbK_P1g/edit?usp=sharing)
-
-### Week 3 - Wrapping up 🎁
-
-Goal:
-Manipulate data. Reflect on end result
-
-[Excercises](https://github.com/cmda-minor-web/web-app-from-scratch-2021/blob/master/course/week-3.md)
-
-[Slides](https://docs.google.com/presentation/d/1yZi-ODpENKHMr0-kpKmnCI6dGSgXS9oeLxMXCJnieic/edit?usp=sharing)
-
-## Best Practices
-All work during this course will be tested against our [Best Practices for JavaScript](https://github.com/cmda-minor-web/best-practices/blob/master/javascript.md).
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
