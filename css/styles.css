@@ -9,6 +9,10 @@ body {
   padding: 5vw;
 }
 
+.hide {
+  display: none;
+}
+
 h1 {
   text-align: center;
   color: white;
