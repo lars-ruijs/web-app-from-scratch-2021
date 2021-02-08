@@ -16,8 +16,13 @@ const roverBase = "mars-photos/api/v1/rovers/";
 const rovers = ['curiosity', 'opportunity', 'spirit'];
 const key = "O0U6zcZfaAGpJjFRQ8kcpVdts9kgWlh7PnjXiQaK";
 
+routie('astronomy/:date', (date) => {
+    console.log(date);
+});
+
 
 function getData(slug, query) {
+console.log(`${apiBase}${slug}?api_key=${key}${query ? '&'+query : ''}`);
     const data = fetch(`${apiBase}${slug}?api_key=${key}${query ? '&'+query : ''}`)
                 .then(response => response.json())
                 .catch(error => console.error("Error with fetch", error));
@@ -25,7 +30,7 @@ function getData(slug, query) {
 }
 
 async function renderAstronomy() {
-   const astronomyPictures = await getData(astronomyBase, "count=6");
+    const astronomyPictures = await getData(astronomyBase, "count=6");
     const container = document.querySelector("section.astronomy");
     const images = astronomyPictures.map(data => data.url);
 
@@ -54,8 +59,9 @@ async function renderAstronomy() {
         featuredDate.textContent = getDate(astronomyPictures[i].date);
         article.appendChild(featuredDate);
 
-        const infoButton = document.createElement("button");
+        const infoButton = document.createElement("a");
         infoButton.textContent = "About this photo";
+        infoButton.href = `#astronomy/${astronomyPictures[i].date}`;
         article.appendChild(infoButton);
 
         container.appendChild(article);
