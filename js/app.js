@@ -25,16 +25,21 @@ function getData(slug, query) {
 }
 
 async function renderAstronomy() {
-    const astronomyPictures = await getData(astronomyBase, "count=4");
+   const astronomyPictures = await getData(astronomyBase, "count=6");
     const container = document.querySelector("section.astronomy");
-    const images = astronomyPictures.map(d => d.url);
+    const images = astronomyPictures.map(data => data.url);
 
     for (const i in images) {
         const article = document.createElement("article");
 
+        const astroFigure = document.createElement("figure");
+
         const astroImage = document.createElement("img");
-        astroImage.src = images[i];
-        article.appendChild(astroImage);
+        astroImage.src = images[i] ? images[i] : '../img/no-picture.png';
+        astroImage.onerror = () => astroImage.src = '../img/no-picture.png';
+        astroFigure.appendChild(astroImage);
+        
+        article.appendChild(astroFigure);
 
         const astroTitle = document.createElement("h2");
         astroTitle.textContent = astronomyPictures[i].title;
@@ -89,7 +94,7 @@ async function renderRover() {
      }
  }
 
-renderRover();
+//renderRover();
 
 function getDate(date) {
     const dateObject = new Date(date);
