@@ -61,7 +61,7 @@ export function renderRover(data) {
             const roverFigure = document.createElement("figure");
 
             const roverImage = document.createElement("img");
-            roverImage.src = rovers[i].photos[0].img_src;
+            roverImage.src = rovers[i].photos[0].img_src.replace("http", "https");
             roverFigure.appendChild(roverImage);
 
             article.appendChild(roverFigure);
