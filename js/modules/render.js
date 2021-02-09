@@ -1,21 +1,15 @@
-export default function render(astronomy, rover, date) {
-    const overview = document.querySelector("#overview");
-    const articles = document.querySelectorAll("section.astronomy article");
-
-    if(!date && articles.length === 0) {
-        renderAstronomy(astronomy);
-        renderRover(rover);
-    }
-    else if(!date && articles.length > 0) {
-        overview.classList.remove("hide");
+export default function render(data, date) {
+    if(!date) {
+        renderAstronomy(data.astronomy);
+        renderRover(data.rover);
     }
     else if(date) {
-        overview.classList.add("hide");
+        console.log("I could render date");
     }
 }
 
 function renderAstronomy(data) {
-   const astronomyPictures = data;
+    const astronomyPictures = data;
     const container = document.querySelector("section.astronomy");
     const images = astronomyPictures.map(data => data.url);
 
@@ -24,10 +18,20 @@ function renderAstronomy(data) {
 
         const astroFigure = document.createElement("figure");
 
-        const astroImage = document.createElement("img");
-        astroImage.src = images[i] ? images[i] : '../img/no-picture.png';
-        astroImage.onerror = () => astroImage.src = '../img/no-picture.png';
-        astroFigure.appendChild(astroImage);
+        if (astronomyPictures[i].media_type === "video") {
+            const astroVideo = document.createElement("iframe");
+            astroVideo.src = images[i] ? images[i] : '../img/no-picture.png';
+            astroVideo.setAttribute("frameborder", "0");
+            astroVideo.setAttribute("allowfullscreen", '');
+            astroFigure.appendChild(astroVideo);
+        }
+
+        else {
+            const astroImage = document.createElement("img");
+            astroImage.src = images[i] ? images[i] : '../img/no-picture.png';
+            astroImage.onerror = () => astroImage.src = '../img/no-picture.png';
+            astroFigure.appendChild(astroImage);
+        }
         
         article.appendChild(astroFigure);
 
@@ -59,25 +63,32 @@ async function renderRover(data) {
      const container = document.querySelector("section.rovers");
  
      for (const i in rovers) {
-        const article = document.createElement("article");
+        if (rovers[i].photos[0]) {
+            const article = document.createElement("article");
 
-        const roverImage = document.createElement("img");
-        roverImage.src = rovers[i].latest_photos[0].img_src;
-        article.appendChild(roverImage);
+            const roverFigure = document.createElement("figure");
 
-        const roverTitle = document.createElement("h2");
-        roverTitle.textContent = rovers[i].latest_photos[0].rover.name;
-        article.appendChild(roverTitle);
+            const roverImage = document.createElement("img");
+            roverImage.src = rovers[i].photos[0].img_src;
+            roverFigure.appendChild(roverImage);
 
-        const createdDate = document.createElement("p");
-        createdDate.textContent = getDate(rovers[i].latest_photos[0].earth_date);
-        article.appendChild(createdDate);
+            article.appendChild(roverFigure);
 
-        const infoButton = document.createElement("button");
-        infoButton.textContent = "More details";
-        article.appendChild(infoButton);
+            const roverTitle = document.createElement("h2");
+            roverTitle.textContent = rovers[i].photos[0].rover.name;
+            article.appendChild(roverTitle);
 
-        container.appendChild(article);
+            const createdDate = document.createElement("p");
+            createdDate.textContent = getDate(rovers[i].photos[0].earth_date);
+            article.appendChild(createdDate);
+
+            const infoButton = document.createElement("a");
+            infoButton.textContent = "More details";
+            infoButton.href = `#rover/${rovers[i].photos[0].rover.name}/${rovers[i].photos[0].sol}`;
+            article.appendChild(infoButton);
+
+            container.appendChild(article);
+        }
     }
  }
 
