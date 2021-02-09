@@ -15,3 +15,9 @@ export function getDate(date) {
     const year = dateObject.toLocaleString("en-US", {year: "numeric"});
     return `${month} ${day}, ${year}`;
 }
+
+export function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}

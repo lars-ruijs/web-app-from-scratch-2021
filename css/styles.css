@@ -131,3 +131,10 @@ section.rovers figure img {
 section.rovers article h2 {
   margin-top: 2em;
 }
+
+section#detail p {
+  color: white;
+  font-family: var(--font);
+  text-align: center;
+  font-size: 0.9em;
+}
