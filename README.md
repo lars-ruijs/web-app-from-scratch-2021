@@ -4,7 +4,7 @@ In this course we will learn how to create a single page web application without
 
 ## Link to live preview
 
-My first version is available live [here](https://lars-ruijs.github.io/web-app-from-scratch-2021/).
+My first version is available live [here](https://pictures-from-space.netlify.app/).
 
 ## Concept idea
 
