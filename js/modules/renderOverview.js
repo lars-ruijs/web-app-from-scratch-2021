@@ -1,14 +1,6 @@
-export default function render(data, date) {
-    if(!date) {
-        renderAstronomy(data.astronomy);
-        renderRover(data.rover);
-    }
-    else if(date) {
-        console.log("I could render date");
-    }
-}
+import { getDate } from '/js/modules/helpers.js';
 
-function renderAstronomy(data) {
+export function renderAstronomy(data) {
     const astronomyPictures = data;
     const container = document.querySelector("section.astronomy");
     const images = astronomyPictures.map(data => data.url);
@@ -58,7 +50,7 @@ function renderAstronomy(data) {
     console.log(astronomyPictures, images);
 }
 
-async function renderRover(data) {
+export function renderRover(data) {
      const rovers = data;
      const container = document.querySelector("section.rovers");
  
@@ -91,11 +83,3 @@ async function renderRover(data) {
         }
     }
  }
-
-function getDate(date) {
-    const dateObject = new Date(date);
-    const day = dateObject.toLocaleString("en-US", {day: "numeric"});
-    const month = dateObject.toLocaleString("en-US", {month: "long"});
-    const year = dateObject.toLocaleString("en-US", {year: "numeric"});
-    return `${month} ${day}, ${year}`;
-}

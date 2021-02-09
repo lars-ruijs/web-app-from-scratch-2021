@@ -1,30 +1,27 @@
-import theData from '/js/modules/data.js';
-import render from '/js/modules/render.js';
+import { renderAstronomy, renderRover} from '/js/modules/renderOverview.js';
+import { renderAstroDetail, renderRoverDetail} from '/js/modules/renderDetail.js';
 
-export default async function handleRouting() {
+export default async function handleRouting(data) {
     const overview = document.querySelector("#overview");
-    const data = await theData();
 
     routie({
         '': () => {
-            const articles = document.querySelectorAll("section#overview section.astronomy article");
-            
-            if (articles.length === 0) {
-                render(data);
-            }
-
-            else if (articles.length > 0) {
+            if (overview.classList.contains("hide")) {
                 overview.classList.remove("hide");
             }
-          console.log(data);
+
+            else {
+                renderAstronomy(data.astronomy);
+                renderRover(data.rover);
+            }
         },
         'astronomy/:date': (date) => {
             overview.classList.add("hide");
-            render(data, date);
-            console.log(date);
+            renderAstroDetail(data.astronomy, date);
         },
         'rover/:name/:sol': (name, sol) => {
-            console.log(name, sol);
+            overview.classList.add("hide");
+            renderRoverDetail(data.rover, sol);
         }
       });
 }
