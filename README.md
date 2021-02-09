@@ -34,6 +34,13 @@ The data I plan to use for my concept comes from NASA. In doing so, I am using t
 - `camera`: an object with information about which rover camera took the picture, example output: `{full_name: "Front Hazard Avoidance Camera", name: "FHAZ"}`
 - `rover`: an object with information about the rover that took the picture, example output:`{landing_date: "2012-08-06", launch_date: "2011-11-26", name: "Curiosity", status: "active"}`
 
+## Actor Diagram
+The actor diagram shows 'who' handles the functionality of the application. It shows the components that are used to create this app and what their relations are. 
+![actor diagram](https://user-images.githubusercontent.com/60745347/107393671-59271080-6afb-11eb-8708-ec1b3e7c7f9b.png)
+
+## Interaction Diagram
+This diagram shows how user interaction flows through the application. 
+<img src="https://user-images.githubusercontent.com/60745347/107393691-5f1cf180-6afb-11eb-8881-3b2ff10c9e7a.png" alt="interaction diagram" width="70%" />
 ## How to install
 
 Comming soon
