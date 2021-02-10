@@ -16,6 +16,8 @@ export function getDate(date) {
     return `${month} ${day}, ${year}`;
 }
 
+// Remove child nodes
+// Code adapted from: https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
 export function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
