@@ -1,6 +1,8 @@
+// Constant API settings (API base URL and API key)
 const apiBase = "https://api.nasa.gov/";
 const key = "O0U6zcZfaAGpJjFRQ8kcpVdts9kgWlh7PnjXiQaK";
 
+// Fetch API data (based on a slug and optional query)
 export function getData(slug, query) {
     const data = fetch(`${apiBase}${slug}?api_key=${key}${query ? '&'+query : ''}`)
                 .then(response => response.json())
@@ -8,6 +10,8 @@ export function getData(slug, query) {
     return data;
 }
 
+// Function used to return a human readable date (in US format)
+// Example input: "2020-11-06". Example output: "November 6, 2020"
 export function getDate(date) {
     const dateObject = new Date(date);
     const day = dateObject.toLocaleString("en-US", {day: "numeric"});
@@ -16,10 +20,16 @@ export function getDate(date) {
     return `${month} ${day}, ${year}`;
 }
 
-// Remove child nodes
+// Remove child nodes for a given parent node
 // Code adapted from: https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
 export function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
+}
+
+// Generate a random number between 0 and 2100.
+export function randomNum() {
+    const random = Math.floor(Math.random() * 2100);
+    return random;
 }
