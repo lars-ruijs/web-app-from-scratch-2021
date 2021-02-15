@@ -28,17 +28,39 @@ h1 span {
   font-weight: 600;
 }
 
+p {
+  color: white;
+  text-align: center;
+  font-family: var(--font);
+  font-weight: 300;
+  margin: 0.5em 0 3em 0;
+}
+
 img {
   width: 25em;
   display: block;
   margin: 0 auto;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font);
+  font-weight: 700;
+  background-color: #171717;
+  text-transform: uppercase;
+  color: white;
+  padding: 1.5em 3em;
+  border: none;
+  border-radius: 99em;
+  margin-top: 2em;
+}
+
 h2:not(section article h2) {
   color: white;
   font-family: var(--font);
   text-align: center;
-  margin: 4em 0 2.5em 0;
+  margin: 5em 0 0 0;
   text-transform: uppercase;
 }
 
@@ -87,20 +109,6 @@ section.astronomy article figure iframe {
   border-radius: 0.5em 0.5em 0 0;
 }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-  font-family: var(--font);
-  font-weight: 700;
-  background-color: #171717;
-  text-transform: uppercase;
-  color: white;
-  padding: 1.5em 3em;
-  border: none;
-  border-radius: 99em;
-  margin-top: 2em;
-}
-
 section.rovers {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -114,6 +122,7 @@ section.rovers {
 
 section.rovers p {
   font-weight: 300;
+  margin: 0;
 }
 
 section.rovers article figure {
