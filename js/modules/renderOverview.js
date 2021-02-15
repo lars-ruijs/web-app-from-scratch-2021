@@ -49,7 +49,6 @@ export function renderAstronomy(data) {
 
         // Create p element > Set content to "Featured on:" > Append inside article
         const featuredTitle = document.createElement("p");
-        featuredTitle.classList.add("bold");
         featuredTitle.textContent = "Featured on:";
         article.appendChild(featuredTitle);
 
