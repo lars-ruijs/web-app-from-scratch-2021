@@ -1,6 +1,8 @@
 import { getDate } from '/js/modules/helpers.js';
 
 export function renderAstroDetail(data) {
+    const loader = document.querySelector(".loader");
+    loader.remove();
 
     const container = document.querySelector("#detail");
     

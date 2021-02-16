@@ -2,7 +2,7 @@ import { getData } from '/js/modules/helpers.js';
 import { setItem, parseItem } from '/js/modules/localStorage.js';
 import { renderAstronomy, renderRover} from '/js/modules/renderOverview.js';
 import { renderAstroDetail, renderRoverDetail} from '/js/modules/renderDetail.js';
-import { removeAllChildNodes, randomNum } from '/js/modules/helpers.js';
+import { removeAllChildNodes, randomNum, loader } from '/js/modules/helpers.js';
 
 
 export default async function handleRouting() {
@@ -28,8 +28,9 @@ export default async function handleRouting() {
             const overviewItems = document.querySelectorAll("#overview article");
 
             // If there are no articles in the overview section > fetch and render data.
-            if (overviewItems.length <= 0) {  
-                       
+            if (overviewItems.length <= 0) { 
+                loader();
+        
                 // Fetch 6 astronomy pictures
                 const astronomyData = await getData(astronomyBase, "count=6");
                 
@@ -55,6 +56,8 @@ export default async function handleRouting() {
 
         // Astronomy (detail) page
         'astronomy/:date': async (date) => {
+
+            loader();
 
             // Remove existing elements inside the detail section (if any) and add "hide" class to overview section. 
             removeAllChildNodes(detail);

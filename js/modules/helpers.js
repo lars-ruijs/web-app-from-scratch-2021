@@ -33,3 +33,12 @@ export function randomNum() {
     const random = Math.floor(Math.random() * 2100);
     return random;
 }
+
+export function loader() {
+    const container = document.querySelector("main");
+    const loadingImg = document.createElement("img");
+    loadingImg.src = "../img/space-loading.gif";
+    loadingImg.alt = "content is being loaded";
+    loadingImg.classList.add("loader");
+    container.prepend(loadingImg);
+}
