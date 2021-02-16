@@ -1,9 +1,9 @@
-import { getDate } from '/js/modules/helpers.js';
+import { getDate, removeLoader } from '/js/modules/helpers.js';
 
 // Astrononmy overview section
 export function renderAstronomy(data) {
-    const loader = document.querySelector(".loader");
-    loader.remove();
+    removeLoader(); 
+
     // Set data value to local variable and select the astronomy container. 
     const astronomyData = data;
     const container = document.querySelector("section.astronomy");

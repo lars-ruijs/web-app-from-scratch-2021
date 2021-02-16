@@ -42,3 +42,8 @@ export function loader() {
     loadingImg.classList.add("loader");
     container.prepend(loadingImg);
 }
+
+export function removeLoader(){
+    const loader = document.querySelector(".loader");
+    loader.remove();
+}

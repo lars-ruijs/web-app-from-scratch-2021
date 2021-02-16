@@ -1,8 +1,7 @@
-import { getDate } from '/js/modules/helpers.js';
+import { getDate, removeLoader } from '/js/modules/helpers.js';
 
 export function renderAstroDetail(data) {
-    const loader = document.querySelector(".loader");
-    loader.remove();
+    removeLoader(); 
 
     const container = document.querySelector("#detail");
     
@@ -68,5 +67,6 @@ export function renderAstroDetail(data) {
 }
 
 export function renderRoverDetail(data) {
+    removeLoader(); 
     console.log("ROVERDATA", data);
 }
