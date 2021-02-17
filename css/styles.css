@@ -184,7 +184,7 @@ section#detail p {
   margin: 0.2em 0;
 }
 
-section#detail p:nth-of-type(2n) {
+section#detail p:nth-of-type(2n):not(div p) {
   font-weight: 700;
   margin-top: 2em;
   text-transform: uppercase;
@@ -203,4 +203,45 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+section#detail div.roverlaunchland {
+  width: 28em;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr;
+  gap: 1em;
+}
+
+section#detail div.roverlaunchland img {
+  width: 3em;
+}
+
+section#detail div.roverlaunchland p {
+  text-align: left;
+  margin: 0;
+}
+
+section#detail div.roverlaunchland p:first-of-type {
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0;
+}
+
+section#detail p.complete {
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: rgb(25, 79, 160);
+  padding: 1em 1.5em;
+  border-radius: 99em;
+  margin: -0.5em 0 3em 0;
+}
+
+section#detail p.active {
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: rgb(25, 160, 70);
+  padding: 1em 1.5em;
+  border-radius: 99em;
+  margin: -0.5em 0 3em 0;
 }

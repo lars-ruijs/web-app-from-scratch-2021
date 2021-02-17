@@ -68,5 +68,52 @@ export function renderAstroDetail(data) {
 
 export function renderRoverDetail(data) {
     removeLoader(); 
-    console.log("ROVERDATA", data);
+    const container = document.querySelector("#detail");
+
+    const roverName = document.createElement("h2");
+    roverName.textContent = data[0] ? data[0].rover.name : "We searched te whole universe, but couldn't find this rover.";
+    container.appendChild(roverName);
+
+    const roverStatus = document.createElement("p");
+    roverStatus.textContent = data[0] ? data[0].rover.status : "404";
+    roverStatus.classList.add(data[0] ? data[0].rover.status : "404");
+    container.appendChild(roverStatus);
+
+    const roverInfoBox = document.createElement("div");
+    roverInfoBox.classList.add("roverlaunchland");
+
+    const rocketImg = document.createElement("img");
+    rocketImg.src = "../img/rocket.svg";
+    roverInfoBox.appendChild(rocketImg);
+
+    const launchedContainer = document.createElement("div");
+
+    const launchedTitle = document.createElement("p");
+    launchedTitle.textContent = "Launched on:";
+    launchedContainer.appendChild(launchedTitle);
+
+    const roverLaunched = document.createElement("p");
+    roverLaunched.textContent = data[0] ? getDate(data[0].rover.launch_date) : "404";
+    launchedContainer.appendChild(roverLaunched);
+
+    roverInfoBox.appendChild(launchedContainer);
+
+    const planetImg = document.createElement("img");
+    planetImg.src = "../img/planet.svg";
+    roverInfoBox.appendChild(planetImg);
+
+    const landedContainer = document.createElement("div");
+
+    const landedTitle = document.createElement("p");
+    landedTitle.textContent = "Landed on:";
+    landedContainer.appendChild(landedTitle);
+
+    const roverLanded = document.createElement("p");
+    roverLanded.textContent = data[0] ? getDate(data[0].rover.landing_date) : "404";
+    landedContainer.appendChild(roverLanded);
+
+    roverInfoBox.appendChild(landedContainer);
+
+    container.appendChild(roverInfoBox);
+
 }

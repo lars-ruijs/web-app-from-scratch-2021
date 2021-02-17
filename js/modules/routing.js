@@ -81,6 +81,8 @@ export default async function handleRouting() {
 
         // Rover (detail) page
         'rover/:name/:sol': async (name, sol) => {
+
+            loader();
             
             // Remove existing elements inside the detail section (if any) and add "hide" class to overview section. 
             removeAllChildNodes(detail);
@@ -92,21 +94,21 @@ export default async function handleRouting() {
 
             // Filter the local storage data on the requested rover and sol (a Mars day). Push it to the filteredData array. 
             localData.forEach(rover => {
-               const filtered = rover.photos.filter(element => element.rover.name === name && element.sol === sol);
+               const filtered = rover.photos.filter(element => element.rover.name == name && element.sol == sol);
                if (filtered.length > 0){
-                filteredData.push(filtered); 
+                filteredData.push(...filtered); 
                }
             });
 
             // If data for requested rover and sol is available from local storage > render detailpage without re-fetching. 
             if (filteredData.length > 0) {
-                renderRoverDetail(roverData[0]);
+                renderRoverDetail(filteredData);
             }
 
             // If data for the requested rover and sol is not available from local storage > fetch data and render detailpage.
             else {
                 const roverData = await getData(`${roverBase+name}/photos`, `sol=${sol}`);
-                renderRoverDetail(roverData);
+                renderRoverDetail(roverData.photos);
             }
         }
       });
