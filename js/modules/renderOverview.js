@@ -4,9 +4,22 @@ import { getDate, removeLoader } from '/js/modules/helpers.js';
 export function renderAstronomy(data) {
     removeLoader(); 
 
-    // Set data value to local variable and select the astronomy container. 
+    // Set data value to local variable and select the overview container. 
     const astronomyData = data;
-    const container = document.querySelector("section.astronomy");
+    const container = document.querySelector("#overview");
+
+    // Add title and intro paragraph > append to container
+    const titleH2 = document.createElement("h2");
+    titleH2.textContent = "Astronomy Pictures";
+    container.appendChild(titleH2);
+
+    const introP = document.createElement("p");
+    introP.textContent = "Pictures taken from space or about space. Featured daily on the Astronomy Picture of the Day site by NASA. Enjoy this random pick of some of their beautiful (and sometimes weird) pictures:";
+    container.appendChild(introP);
+
+    // Add a section for the astronomy pictures
+    const astroContainer = document.createElement("section");
+    astroContainer.classList.add("astronomy");
 
     // Array with all the image URL's
     const images = astronomyData.map(data => data.url);
@@ -66,15 +79,30 @@ export function renderAstronomy(data) {
         article.appendChild(infoButton);
 
         // Append article to astronomy container
-        container.appendChild(article);
+        astroContainer.appendChild(article);
     }
+    // Append the astronomy section to the overview container
+    container.appendChild(astroContainer);
 }
 
 // Rover overview section
 export function renderRover(data) {
-    // Set data value to local variable and select the astronomy container. 
-     const rovers = data;
-     const container = document.querySelector("section.rovers");
+    // Set data value to local variable and select the overview container. 
+    const rovers = data;
+    const container = document.querySelector("#overview");
+
+    // Add title and intro paragraph > append to container
+    const titleH2 = document.createElement("h2");
+    titleH2.textContent = "Rover Pictures";
+    container.appendChild(titleH2);
+
+    const introP = document.createElement("p");
+    introP.textContent = "Pictures taken by the Mars rover robots.";
+    container.appendChild(introP);
+
+    // Add a section for the rover pictures
+    const roverContainer = document.createElement("section");
+    roverContainer.classList.add("rovers");
  
     // Repeat rendering for all rovers
      for (const i in rovers) {
@@ -112,7 +140,9 @@ export function renderRover(data) {
             article.appendChild(infoButton);
 
             // Append article to rover container
-            container.appendChild(article);
+            roverContainer.appendChild(article);
         }
     }
+    // Append the rover section to the overview container
+    container.appendChild(roverContainer);
  }
