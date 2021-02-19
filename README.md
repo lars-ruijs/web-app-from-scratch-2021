@@ -8,7 +8,7 @@ My first version is available live [here](https://pictures-from-space.netlify.ap
 
 ## Concept idea
 
-For my concept, I want to use data from the NASA API. Below I have put down a sketch and a digital sketch as an idea of what data I want to show and how the interaction will work in general. Keep in mind that this is still purely a concept and my current version is nowhere near it.
+For my concept, I want to use data from the NASA API. Below I have put down a sketch and a digital sketch as an idea of what data I want to show and how the interaction will work in general.
 
 <img width="50%" alt="schets van concept" src="https://user-images.githubusercontent.com/60745347/107011834-7e80eb00-6798-11eb-96db-6ced7cfd4d46.JPG" />
 
@@ -16,7 +16,7 @@ For my concept, I want to use data from the NASA API. Below I have put down a sk
 
 ## Data
 
-The data I plan to use for my concept comes from NASA. In doing so, I am using two APIs from NASA. The first API contains data from the "Astronomy Picture of the Day" website. The second API contains data from "Mars Rover Photos". Below I have posted an overview of the data contained in these APIs:
+The data I plan to use for my concept comes from NASA. I am using two APIs from NASA. The first API contains data from the "Astronomy Picture of the Day" website. The second API contains data from "Mars Rover Photos". Below I have posted an overview of the data contained in these APIs:
 
 **From the "Astronomy Picture of the Day" dataset:**
 
@@ -36,11 +36,12 @@ The data I plan to use for my concept comes from NASA. In doing so, I am using t
 
 ## Actor Diagram
 The actor diagram shows 'who' handles the functionality of the application. It shows the components that are used to create this app and what their relations are. 
-![actor diagram](https://user-images.githubusercontent.com/60745347/107393671-59271080-6afb-11eb-8708-ec1b3e7c7f9b.png)
+![actor diagram](https://user-images.githubusercontent.com/60745347/108478661-1270ad80-7295-11eb-8280-337161dfbaf5.png)
 
 ## Interaction Diagram
 This diagram shows how user interaction flows through the application. 
-<img src="https://user-images.githubusercontent.com/60745347/107393691-5f1cf180-6afb-11eb-8881-3b2ff10c9e7a.png" alt="interaction diagram" width="70%" />
+<img src="https://user-images.githubusercontent.com/60745347/108479086-9460d680-7295-11eb-88e9-f2df34175db0.png" alt="interaction diagram" width="70%" />
+
 ## How to install
 
 Comming soon
