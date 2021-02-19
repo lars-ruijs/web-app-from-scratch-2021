@@ -2,6 +2,7 @@ import { getDate, removeLoader } from '/js/modules/helpers.js';
 
 // Astrononmy overview section
 export function renderAstronomy(data) {
+    // Remove loading animation
     removeLoader(); 
 
     // Set data value to local variable and select the overview container. 

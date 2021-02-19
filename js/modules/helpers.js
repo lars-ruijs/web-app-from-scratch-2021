@@ -34,6 +34,7 @@ export function randomNum() {
     return random;
 }
 
+// Create a loading animation and append it to the top of main.
 export function loader() {
     const container = document.querySelector("main");
     const loadingImg = document.createElement("img");
@@ -43,6 +44,7 @@ export function loader() {
     container.prepend(loadingImg);
 }
 
+// Remove the loading animation.
 export function removeLoader(){
     const loader = document.querySelector(".loader");
     loader.remove();

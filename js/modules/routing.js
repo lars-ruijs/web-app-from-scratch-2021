@@ -28,6 +28,7 @@ export default async function handleRouting() {
 
             // If there are no articles in the overview section > fetch and render data.
             if (overviewItems.length <= 0) { 
+                // Add loading animation
                 loader();
         
                 // Fetch 6 astronomy pictures
@@ -55,7 +56,7 @@ export default async function handleRouting() {
 
         // Astronomy (detail) page
         'astronomy/:date': async (date) => {
-
+            // Add loading animation
             loader();
 
             // Remove existing elements inside the detail section (if any) and add "hide" class to overview section. 
@@ -80,7 +81,7 @@ export default async function handleRouting() {
 
         // Rover (detail) page
         'rover/:name/:sol': async (name, sol) => {
-
+            // Add loading animation
             loader();
             
             // Remove existing elements inside the detail section (if any) and add "hide" class to overview section. 
