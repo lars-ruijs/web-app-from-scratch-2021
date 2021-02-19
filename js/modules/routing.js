@@ -1,8 +1,7 @@
-import { getData } from '/js/modules/helpers.js';
+import { getData, removeAllChildNodes, randomNum, loader } from '/js/modules/helpers.js';
 import { setItem, parseItem } from '/js/modules/localStorage.js';
 import { renderAstronomy, renderRover} from '/js/modules/renderOverview.js';
 import { renderAstroDetail, renderRoverDetail} from '/js/modules/renderDetail.js';
-import { removeAllChildNodes, randomNum, loader } from '/js/modules/helpers.js';
 
 
 export default async function handleRouting() {
