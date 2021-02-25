@@ -10,10 +10,10 @@
 // INFO PER ROVER (launch date, arrival, status, max-sol, max-date and camera's)
 // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/?api_key=DEMO_KEY
 
-import handleRouting from '/js/modules/routing.js';
+import handleRouting from "/js/modules/routing.js";
 
 function init() {
-    handleRouting();
+  handleRouting();
 }
 
 init();

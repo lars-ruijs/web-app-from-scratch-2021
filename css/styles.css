@@ -116,14 +116,14 @@ section.astronomy article figure img {
 }
 
 section.astronomy article figure iframe {
-  width: 101%;
+  width: 100%;
   height: 100%;
   border-radius: 0.5em 0.5em 0 0;
 }
 
 section.rovers {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 2em;
   text-align: center;
   color: white;
@@ -163,6 +163,11 @@ section#detail img {
   width: 100%;
   height: auto;
   border-radius: 0.5em;
+}
+
+section#detail iframe {
+  width: 100%;
+  height: 40vw;
 }
 
 section#detail h2 {

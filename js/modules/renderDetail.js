@@ -181,9 +181,10 @@ export function renderRoverDetail(data) {
         // For each photo > append figure element with image and figcaption
         photos.forEach((photo, i) => {
             const roverFigure = document.createElement("figure");
-
+            
+            // Create img > Replace http for https (if applicable) > Append image
             const roverImg = document.createElement("img");
-            roverImg.src = photo;
+            roverImg.src = photo.startsWith("https") ? photo : photo.replace("http", "https");
             roverFigure.appendChild(roverImg);
 
             const roverFigCaption = document.createElement("figcaption");
