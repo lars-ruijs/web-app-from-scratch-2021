@@ -41,7 +41,19 @@ export default async function handleRouting() {
             `${roverBase + rover}/photos`,
             `sol=${randomNum(maxSol)}`
           );
-          roverData.push(data);
+
+          // If no pictures for this sol > fetch for sol 1
+          if(data.photos.length == 0) {
+            const defaultData = await getData(
+              `${roverBase + rover}/photos`,`sol=1`
+            );
+            roverData.push(defaultData);
+          }
+
+          // Else, push data to array.
+          else {
+            roverData.push(data);
+          }
         }
 
         // Store the fetched data inside LocalStorage.
