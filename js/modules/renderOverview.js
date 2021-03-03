@@ -2,6 +2,7 @@ import { getDate, removeLoader } from "/js/modules/helpers.js";
 
 // Astrononmy overview section
 export function renderAstronomy(data) {
+
   // Remove loading animation
   removeLoader();
 
@@ -88,6 +89,7 @@ export function renderAstronomy(data) {
 
 // Rover overview section
 export function renderRover(data) {
+
   // Set data value to local variable and select the overview container.
   const rovers = data;
   const container = document.querySelector("#overview");
@@ -107,6 +109,7 @@ export function renderRover(data) {
 
   // Repeat rendering for all rovers
   for (const i in rovers) {
+    
     // Only render if the mars rover has photo data
     if (rovers[i].photos[0]) {
       // Create article and figure element

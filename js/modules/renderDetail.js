@@ -1,6 +1,7 @@
 import { getDate, removeLoader } from '/js/modules/helpers.js';
 
 export function renderAstroDetail(data) {
+
     // Scroll to top and remove loader
     window.scrollTo(0, 0);
     removeLoader(); 
@@ -55,6 +56,7 @@ export function renderAstroDetail(data) {
 
     // Only render this if the API doesn't give an error code. 
     if(!data.code){
+
         // Create p element > Set content to "Picture by:" > Append inside container
         const copyrightTitle = document.createElement("p");
         copyrightTitle.textContent = "Picture by:";
@@ -83,6 +85,7 @@ export function renderAstroDetail(data) {
 
 // Render rover detailpage
 export function renderRoverDetail(data) {
+
     // Scroll to top and remove loader
     window.scrollTo(0, 0);
     removeLoader(); 
@@ -92,6 +95,7 @@ export function renderRoverDetail(data) {
 
     // If no data, add "Not found image" and error message
     if(!data || data.length == 0) {
+
         const notFoundImg = document.createElement("img");
         notFoundImg.src = '../img/not-found.png';
         container.appendChild(notFoundImg);
@@ -107,6 +111,7 @@ export function renderRoverDetail(data) {
 
     // If there is data > render the detail page.
     else {
+
         // Name of rover (e.g. "Spirit")
         const roverName = document.createElement("h2");
         roverName.textContent = data ? data[0].rover.name : "Unknown Rover.";
@@ -133,6 +138,7 @@ export function renderRoverDetail(data) {
         launchedTitle.textContent = "Launched on:";
         launchedContainer.appendChild(launchedTitle);
 
+        // Rover launch date
         const roverLaunched = document.createElement("p");
         roverLaunched.textContent = data ? getDate(data[0].rover.launch_date) : "A day in the universe";
         launchedContainer.appendChild(roverLaunched);
@@ -151,6 +157,7 @@ export function renderRoverDetail(data) {
         landedTitle.textContent = "Landed on:";
         landedContainer.appendChild(landedTitle);
 
+        // Rover landing date
         const roverLanded = document.createElement("p");
         roverLanded.textContent = data ? getDate(data[0].rover.landing_date) : "A day in the universe";
         landedContainer.appendChild(roverLanded);

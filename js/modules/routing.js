@@ -4,6 +4,7 @@ import { renderAstronomy, renderRover } from "/js/modules/renderOverview.js";
 import { renderAstroDetail, renderRoverDetail} from "/js/modules/renderDetail.js";
 
 export default async function handleRouting() {
+
   // URL bases and Rover names (used for calling getData function).
   const astronomyBase = "planetary/apod";
   const roverBase = "mars-photos/api/v1/rovers/";
@@ -14,8 +15,10 @@ export default async function handleRouting() {
   const detail = document.querySelector("#detail");
 
   routie({
+
     // Home (overview) page
     "": async () => {
+
       // Remove all elements inside the detail section. Remove the hide class (if present).
       removeAllChildNodes(detail);
       overview.classList.remove("hide");
@@ -60,7 +63,7 @@ export default async function handleRouting() {
         setItem("astronomy", astronomyData);
         setItem("rover", roverData);
 
-        // Remove hide class (if present) and render the overview sections.
+        // Render the overview sections.
         renderAstronomy(astronomyData);
         renderRover(roverData);
       }
@@ -68,6 +71,7 @@ export default async function handleRouting() {
 
     // Astronomy (detail) page
     "astronomy/:date": async (date) => {
+
       // Add loading animation
       loader();
 
@@ -93,6 +97,7 @@ export default async function handleRouting() {
 
     // Rover (detail) page
     "rover/:name/:sol": async (name, sol) => {
+      
       // Add loading animation
       loader();
 
